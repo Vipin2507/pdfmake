@@ -46,6 +46,18 @@ Check out [the playground](http://bpampuch.github.io/pdfmake/playground.html) an
 
 Source of documentation: https://github.com/pdfmake/docs **Improvements are welcome!**
 
+## Run the playground
+
+```
+npm install
+npm run build
+npm start
+```
+
+Open http://localhost:1234
+
+Set `PORT`, `HOST`, and optional `PLAYGROUND_USER` / `PLAYGROUND_PASSWORD` for HTTP basic auth.
+
 ## Building from sources
 
 using npm:

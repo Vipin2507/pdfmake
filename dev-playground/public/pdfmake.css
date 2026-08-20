@@ -170,6 +170,8 @@ h1 {
 		height: 50%;
 		width: 100%;
 		position: absolute;
+		border: 0;
+		background: #525659;
 	}
 
 	.playgroundBody .notEnoughSpace, #stats {
@@ -222,6 +224,8 @@ h1 {
 		top: 0;
 		bottom: 0;
 		position: absolute;
+		border: 0;
+		background: #525659;
 	}
 	.playgroundBody .notEnoughSpace {
 		display: none;

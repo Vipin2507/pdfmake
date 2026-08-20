@@ -1,5 +1,6 @@
 npm-debug.log
 node_modules
+.env
 doc
 .DS_Store
 .idea
@@ -7,7 +8,6 @@ doc
 *.ipr
 *.iws
 nbproject
-package-lock.json
 yarn.lock
 /build
 /js

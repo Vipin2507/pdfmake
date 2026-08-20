@@ -9,6 +9,8 @@
     "test": "tests"
   },
   "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
     "linebreak": "^1.1.0",
     "pdfkit": "^0.19.1",
     "xmldoc": "^2.0.3"
@@ -62,11 +64,12 @@
     "build:fonts": "shx mkdir -p build/fonts && shx mkdir -p build/fonts/Roboto && shx cp -r fonts/Roboto/*.* build/fonts/Roboto && brfs \"./src/browser-extensions/fonts/Roboto.js\" > build/fonts/Roboto.js",
     "lint": "eslint \"./src/**/*.js\" \"./tests/**/*.js\" \"./examples/**/*.js\" \"./standard-fonts/**/*.js\" \"./fonts/**/*.js\"",
     "mocha": "mocha --reporter spec \"./tests/**/*.spec.js\"",
+    "start": "node dev-playground/server.js",
     "playground": "node dev-playground/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/bpampuch/pdfmake.git"
+    "url": "git://github.com/Vipin2507/pdfmake.git"
   },
   "keywords": [
     "pdf",

@@ -46,7 +46,7 @@
 		</div>
 		<div class='content'>
 			<div id='editor'></div>
-			<iframe id='pdfV'></iframe>
+			<iframe id='pdfV' title='PDF preview'></iframe>
 
 		</div>
 	</div>
@@ -103,18 +103,24 @@
 					}, 300);
 				});
 
+				var pdfObjectUrl;
+
 				function generate() {
 					lastGen = new Date();
 
 					var content = editor.getSession().getValue();
 
-					$http.post('/pdf', { content: content }).
-						success(function (data, status, headers, config) {
-
-							document.getElementById('pdfV').src = data;
+					$http.post('/pdf', { content: content }, { responseType: 'arraybuffer' }).
+						success(function (data) {
+							var blob = new Blob([data], { type: 'application/pdf' });
+							if (pdfObjectUrl) {
+								URL.revokeObjectURL(pdfObjectUrl);
+							}
+							pdfObjectUrl = URL.createObjectURL(blob);
+							document.getElementById('pdfV').src = pdfObjectUrl;
 						}).
-						error(function (data, status, headers, config) {
-							console.log('ERROR', data);
+						error(function (data, status) {
+							console.log('ERROR', status, data);
 						});
 				}
 			}
